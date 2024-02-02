@@ -18,8 +18,8 @@ class TestCustomer(unittest.TestCase):
     def setUp(self):
         """This function run before every test case, can config database here"""
         print('setUp')
-        self.emp_1 = Customer('Corey', 'Schafer', 50000)
-        self.emp_2 = Customer('Sue', 'Smith', 60000)
+        self.emp_1 = Customer('Jannatul', 'Ferdoush', 50000)
+        self.emp_2 = Customer('Sumaya', 'Islam', 60000)
 
     def tearDown(self):
         """This function run after every test case, can delete database here"""
@@ -28,26 +28,26 @@ class TestCustomer(unittest.TestCase):
     def test_email(self):
         """tests the email of employee after any change"""
         print('test_email')
-        self.assertEqual(self.emp_1.email, 'Corey.Schafer@email.com')
-        self.assertEqual(self.emp_2.email, 'Sue.Smith@email.com')
+        self.assertEqual(self.emp_1.email, 'Jannatul.Ferdoush@email.com')
+        self.assertEqual(self.emp_2.email, 'Sumaya.Islam@email.com')
 
-        self.emp_1.first = 'John'
-        self.emp_2.first = 'Jane'
+        self.emp_1.first = 'Nusrat'
+        self.emp_2.first = 'Mahrufa'
 
-        self.assertEqual(self.emp_1.email, 'John.Schafer@email.com')
-        self.assertEqual(self.emp_2.email, 'Jane.Smith@email.com')
+        self.assertEqual(self.emp_1.email, 'Nusrat.Ferdoush@email.com')
+        self.assertEqual(self.emp_2.email, 'Mahrufa.Islam@email.com')
 
     def test_fullname(self):
         """tests the fullname of employee after any change"""
         print('test_fullname')
-        self.assertEqual(self.emp_1.fullname, 'Corey Schafer')
-        self.assertEqual(self.emp_2.fullname, 'Sue Smith')
+        self.assertEqual(self.emp_1.fullname, 'Jannatul Ferdoush')
+        self.assertEqual(self.emp_2.fullname, 'Sumaya Islam')
 
-        self.emp_1.first = 'John'
-        self.emp_2.first = 'Jane'
+        self.emp_1.first = 'Nusrat'
+        self.emp_2.first = 'Mahrufa'
 
-        self.assertEqual(self.emp_1.fullname, 'John Schafer')
-        self.assertEqual(self.emp_2.fullname, 'Jane Smith')
+        self.assertEqual(self.emp_1.fullname, 'Nusrat Ferdoush')
+        self.assertEqual(self.emp_2.fullname, 'Mahrufa Islam')
 
     def test_apply_raise(self):
         """tests the pay amount raised by 5% of the employee"""
@@ -65,13 +65,13 @@ class TestCustomer(unittest.TestCase):
             mocked_get.return_value.text = 'Success'
 
             schedule = self.emp_1.monthly_schedule('May')
-            mocked_get.assert_called_with('http://company.com/Schafer/May')
+            mocked_get.assert_called_with('http://company.com/Ferdoush/May')
             self.assertEqual(schedule, 'Success')
 
             mocked_get.return_value.ok = False
 
             schedule = self.emp_2.monthly_schedule('June')
-            mocked_get.assert_called_with('http://company.com/Smith/June')
+            mocked_get.assert_called_with('http://company.com/Islam/June')
             self.assertEqual(schedule, 'Bad Response!')
 
 

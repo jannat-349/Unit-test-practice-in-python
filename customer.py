@@ -1,11 +1,8 @@
 import requests
 
-
 class Customer:
     """A sample Customer class"""
-
     raise_amt = 1.05
-
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
