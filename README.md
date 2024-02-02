@@ -42,6 +42,8 @@ Unit testing is applied on every individual unit of a software product. In pytho
 ## Video Link
 [Click Here](https://youtu.be/6tNS--WetLI?si=KQ3RxWsW7jeBPvSW)
 
+## unittest assert functions
+[Click Here](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug)
 
 
 
